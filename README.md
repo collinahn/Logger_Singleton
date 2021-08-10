@@ -25,10 +25,13 @@ class GitHub {
 private:
     Logger *p_Logger = Logger::getInstance();       // Logger instance 호출
 public:
+    static Logger *getInstance() { return &LoggerInstance; }
     void GitHubFunc();
 }
 
 //GitHub.cpp
+GitHub GitHub::LoggerInstance;
+
 void GitHub::GitHubFunc() {
     p_Logger->INFO("GitHubFunc Executed", 1);
 }
